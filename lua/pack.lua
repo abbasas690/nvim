@@ -22,6 +22,10 @@ packer.startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter',
     config = function() require('treesitter').treesitter() end
   }
+  use{
+    'glepnir/zephyr-nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
+  }
   use 'Mofiqul/dracula.nvim'
   use 'navarasu/onedark.nvim'
   use {

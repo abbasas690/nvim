@@ -68,6 +68,4 @@ function config.lsp()
     {border = 'rounded'}
   )
 end
-  })
-end
 return config

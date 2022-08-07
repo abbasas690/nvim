@@ -3,6 +3,7 @@ for _, source in ipairs {
   'pack',
   'options',
   'mapping',
+  'color'
 } do
   local status_ok = pcall(require, source)
   if not status_ok then

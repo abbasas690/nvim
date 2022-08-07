@@ -17,7 +17,7 @@ map("n", "<Leader>wq", ":wq<CR>")
 map("n", "<Leader>w", ":w<CR>")
 map("n", "<Leader>r", "<cmd>split term://make %< && ./%<<CR>")
 map("n", "<Leader>tt", "<cmd>lua toggletheme()<CR>")
-map("n", "<Leader>e", "<cmd>e . <CR>")
+map("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>")
 map("t", "<Esc>", "<C-/><C-n>",{noremap =true})
 map("n","<Leader>p","<cmd>split term://python % <CR>")
 vim.api.nvim_create_autocmd('User', {

@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd('User', {
 
     -- Displays a function's signature information
     bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+    bufmap('n', '<Leader>f', '<cmd>lua vim.lsp.buf.formatting()<cr>')
 
     -- Renames all references to the symbol under the cursor
     bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')

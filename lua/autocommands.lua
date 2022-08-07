@@ -28,8 +28,7 @@ vim.api.nvim_create_autocmd('TermOpen',{
 vim.api.nvim_create_autocmd('BufWritePre',{
   pattern={'*.c','*.lua'},
   callback= function()
-    vim.cmd[[:normal gg=G ]]
-    vim.cmd[["normal <C-o>"]]
+    vim.cmd[["lua vim.lsp.buf.formatting()"]]
   end
 })
 

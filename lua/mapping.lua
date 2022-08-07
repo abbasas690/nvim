@@ -65,4 +65,5 @@ vim.api.nvim_create_autocmd('User', {
 
     -- Move to the next diagnostic
     bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+  end
 })

@@ -40,6 +40,17 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.cmd [[lua vim.lsp.buf.formatting() ]]
   end
 })
+-- Save/restore code folds
+local saveFolds = vim.api.nvim_create_augroup("saveFolds", {})
+vim.api.nvim_create_autocmd("BufWritePost", {
+    command = "silent mkview",
+    group = saveFolds,
+})
+vim.api.nvim_create_autocmd("BufReadPost", {
+    command = "silent! loadview",
+    group = saveFolds,
+})
+
 vim.api.nvim_create_autocmd('User', {
   pattern = 'LspAttached',
   desc = 'LSP actions',

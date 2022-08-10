@@ -4,6 +4,13 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   group = packer_group,
   pattern = vim.fn.expand '$MYVIMRC',
 })
+--remove trailing whitespaces & highlight yank
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = { '*' },
+  callback = function()
+    vim.api.nvim_command [[%s/\s\+$//e]]
+  end
+})
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -43,12 +50,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 -- Save/restore code folds
 local saveFolds = vim.api.nvim_create_augroup("saveFolds", {})
 vim.api.nvim_create_autocmd("BufWritePost", {
-    command = "silent mkview",
-    group = saveFolds,
+  command = "silent mkview",
+  group = saveFolds,
 })
 vim.api.nvim_create_autocmd("BufReadPost", {
-    command = "silent! loadview",
-    group = saveFolds,
+  command = "silent! loadview",
+  group = saveFolds,
 })
 
 vim.api.nvim_create_autocmd('User', {

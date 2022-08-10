@@ -41,16 +41,16 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 --word && line jumps
-map('', 's', '<cmd>HopWord<CR>', {})
-map('', 'f',
+map('', '<leader>jw', '<cmd>HopWord<CR>', {})
+map('', '<leader>jf',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
   , {})
-map('', 'F',
+map('', '<leader>jF',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
   , {})
-map('', 't',
+map('', '<leader>jt',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>"
   , {})
-map('', 'T',
+map('', '<leader>jT',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>"
   , {})

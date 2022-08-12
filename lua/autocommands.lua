@@ -35,6 +35,16 @@ vim.api.nvim_create_autocmd('FileType', {
     end
   end
 })
+-- Don't auto commenting new lines
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*',
+  command = 'set fo-=c fo-=r fo-=o'
+})
+-- Terminal settings:
+-- Open a Terminal on the right tab
+vim.api.nvim_create_autocmd('CmdlineEnter', {
+  command = 'command! Term :botright vsplit term://$SHELL'
+})
 vim.api.nvim_create_autocmd('TermOpen', {
   callback = function()
     vim.cmd [[setlocal nonumber]]
